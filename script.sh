@@ -60,7 +60,7 @@ transform(){
     sed -i '1 s/Variable_code/variable_code/' $data
 
     #  select only the following columns: year, Value, Units, variable_code
-    awk -F',' '
+    awk 'BEGIN {OFS=","}
     NR == 1 {
         for (i = 1; i <= NF; i++) {
             if ($i == "Year") {
