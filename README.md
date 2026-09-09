@@ -47,10 +47,10 @@ After I confirmed that the script ran correctly manually, I scheduled a cron job
 I added this job to crontab
 `* 0 * * * /mnt/c/Users/HP/Desktop/CDE/Assignments/Linux/Bash-etl-pipeline/etl_script.sh`
 
-Before the final job above I made sure to cofirm that the schedule ran correctly by setting it to run every 5 mins at first
-`5 * * * * /mnt/c/Users/HP/Desktop/CDE/Assignments/Linux/Bash-etl-pipeline/etl_script.sh`
+Before the final job above I tried to test that the schedule ran correctly by setting it to run every 5 minutes at first
+`*/5 * * * * /mnt/c/Users/HP/Desktop/CDE/Assignments/Linux/Bash-etl-pipeline/etl_script.sh`
 
-Then I used `journalctl -u cron --since "1 hour ago"` to check the logs of crons that ran 1 hour ago.
+Then I used `journalctl -u cron --since "1 hour ago"` to check the logs of jobs that ran 1 hour ago.
 
 ---
 
@@ -63,6 +63,8 @@ The output data are in the  Raw/, Transformed/, Gold/, directory
 ---
 
 ## Challenges Faced
-- The transform function did not run accurately because of the delimeter specified in awk  
+- The transform function did not give the correct results because of the delimiter used in awk. Some fields in the CSV contain commas, which caused the data to be split incorrectly.
+- The cron job ran, but the data folders were created in the wrong directory.
+These problems are still being worked on.
 
 
