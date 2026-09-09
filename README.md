@@ -34,7 +34,7 @@ The file `etl_script.sh` is the script that creates the pipeline. In this script
 - transform function also creates a directory named transformed, rename column `Variable_code` to `variable_code`, and selects four columns: `year`, `Value`, `Units`, `variable_code`
 - Lastly the load function loads the transformed data into a directory named Gold
 
-Features I but in place while developing this script were
+Features I added to this script are
 - Environment variables to store the URL. 
 - Print out information for each step.
 - Colorful terminal messages.
@@ -66,6 +66,7 @@ The output data are in the  Raw/, Transformed/, Gold/, directory
 ## Challenges Faced
 - The transform function did not give the correct results because of the delimiter used in awk. Some fields in the CSV contain commas, which caused the data to be split incorrectly.
 - The cron job ran, but the data folders were created in the wrong directory.
+
 These problems are still being worked on.
 
 
