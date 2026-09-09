@@ -21,8 +21,7 @@ project/
 ├── Gold/
 ├── Raw/
 ├── Transformed/
-├── setup.log
-├── .gitignore
+├── output.img
 └── README.md
 
 ```
@@ -59,6 +58,8 @@ Then I used `journalctl -u cron --since "1 hour ago"` to check the logs of jobs 
 ---
 ## Example Output
 The output data are in the  Raw/, Transformed/, Gold/, directory
+
+![](output.png)
 
 ---
 
